@@ -1,0 +1,15 @@
+play-java/logs
+play-java/project/project
+play-java/project/target
+play-java/target
+play-java/tmp
+play-java/.history
+play-java/dist
+play-java/.idea
+play-java/*.iml
+play-java/out
+play-java/.idea_modules
+play-java/.classpath
+play-java/.project
+play-java/RUNNING_PID
+play-java/.settings
