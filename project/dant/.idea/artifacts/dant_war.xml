@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="dant:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="dant.war">
-      <element id="artifact" artifact-name="dant:war exploded" />
-    </root>
-  </artifact>
-</component>
