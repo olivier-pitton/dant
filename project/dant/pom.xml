@@ -8,10 +8,11 @@
 	<name>dant</name>
 
 	<properties>
-		<resteasy.version>3.0.19.Final</resteasy.version>
+		<resteasy.version>3.1.0.Final</resteasy.version>
 	</properties>
 
 	<dependencies>
+		<!-- JAX-RS lib -->
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
@@ -22,9 +23,22 @@
 			<artifactId>resteasy-servlet-initializer</artifactId>
 			<version>${resteasy.version}</version>
 		</dependency>
+		<!-- Json lib -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+		<!-- Date lib -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.7</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>dant</finalName>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -43,31 +57,8 @@
 					<webApp>
 						<contextPath>/</contextPath>
 					</webApp>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<stopKey>alpha</stopKey>
-					<stopPort>9099</stopPort>
-					<stopWait>2</stopWait>
+					<scanIntervalSeconds>2</scanIntervalSeconds>
 				</configuration>
-				<executions>
-					<execution>
-						<id>start-jetty</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<scanIntervalSeconds>0</scanIntervalSeconds>
-							<daemon>true</daemon>
-						</configuration>
-					</execution>
-					<execution>
-						<id>stop-jetty</id>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>stop</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
