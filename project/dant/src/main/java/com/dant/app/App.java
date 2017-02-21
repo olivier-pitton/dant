@@ -1,5 +1,6 @@
 package com.dant.app;
 
+import com.dant.exception.RuntimeExceptionMapper;
 import com.dant.filter.GsonProvider;
 
 import javax.ws.rs.ApplicationPath;
@@ -24,6 +25,7 @@ public class App extends Application {
 	public Set<Class<?>> getClasses() {
 		Set<Class<?>> sets = new HashSet<>(1);
 		sets.add(GsonProvider.class);
+		sets.add(RuntimeExceptionMapper.class);
 		return sets;
 	}
 }
